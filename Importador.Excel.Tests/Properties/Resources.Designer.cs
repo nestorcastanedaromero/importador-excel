@@ -69,5 +69,35 @@ namespace Importador.Excel.Tests.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] PruebaFechaCorrecta {
+            get {
+                object obj = ResourceManager.GetObject("PruebaFechaCorrecta", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] PruebaFechaInCorrecta {
+            get {
+                object obj = ResourceManager.GetObject("PruebaFechaInCorrecta", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] PruebaNumeroComoTexto {
+            get {
+                object obj = ResourceManager.GetObject("PruebaNumeroComoTexto", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

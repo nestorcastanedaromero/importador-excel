@@ -121,4 +121,13 @@
   <data name="Prueba" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Prueba.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="PruebaFechaCorrecta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PruebaFechaCorrecta.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PruebaFechaInCorrecta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PruebaFechaInCorrecta.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PruebaNumeroComoTexto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PruebaNumeroComoTexto.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
