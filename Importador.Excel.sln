@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Importador.Excel.Tests", "Importador.Excel.Tests\Importador.Excel.Tests.csproj", "{0D1BB34C-716D-4428-9D54-550FD6CBF695}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Importador.Excel.Tests", "Importador.Excel.Tests\Importador.Excel.Tests.csproj", "{0D1BB34C-716D-4428-9D54-550FD6CBF695}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Importador.Excel.Epplus", "Importador.Excel.Epplus\Importador.Excel.Epplus.csproj", "{AEB9ABAA-8E69-4820-B232-F5FD91C2E1A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0D1BB34C-716D-4428-9D54-550FD6CBF695}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D1BB34C-716D-4428-9D54-550FD6CBF695}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D1BB34C-716D-4428-9D54-550FD6CBF695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEB9ABAA-8E69-4820-B232-F5FD91C2E1A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEB9ABAA-8E69-4820-B232-F5FD91C2E1A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEB9ABAA-8E69-4820-B232-F5FD91C2E1A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEB9ABAA-8E69-4820-B232-F5FD91C2E1A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
