@@ -1,4 +1,4 @@
-namespace Importador.Excel.Epplus
+namespace Importador.Excel.Abstracciones
 {
     public class MapeoColumnaPropiedad
     {
