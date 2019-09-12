@@ -31,7 +31,37 @@ namespace Importador.Excel.Tests
         [TestMethod]
         public void Debe_Mapeador_ImportarFechasCorrectamente()
         {
-            
+            List<DtoPruebaFecha> datos;
+
+            using (var stream = new MemoryStream(Resources.PruebaFechaCorrecta))
+            {
+                var mapeador = new MapeadorDe<DtoPruebaFecha>(new ImportadorExcelEpPlus());
+
+                datos = mapeador.Mapear(stream);
+            }
+
+            Assert.AreEqual(datos.Count, 1);
+            Assert.AreEqual(1, datos[0].Id);
+            Assert.AreEqual("Pedro", datos[0].Nombre);
+            Assert.AreEqual(new DateTime(2017, 7, 7), datos[0].Fecha);
+        }
+
+        [TestMethod]
+        public void Debe_CuandoFechaIncorrecta_Retornar_ListaErrores()
+        {
+            List<DtoPruebaFecha> datos;
+
+            using (var stream = new MemoryStream(Resources.PruebaFechaInCorrecta))
+            {
+                var mapeador = new MapeadorDe<DtoPruebaFecha>(new ImportadorExcelEpPlus());
+
+                datos = mapeador.Mapear(stream);
+            }
+
+            Assert.AreEqual(datos.Count, 0);
+            Assert.AreEqual(1, datos[0].Id);
+            Assert.AreEqual("Pedro", datos[0].Nombre);
+            Assert.AreEqual(new DateTime(2017, 7, 7), datos[0].Fecha);
         }
 
     }
