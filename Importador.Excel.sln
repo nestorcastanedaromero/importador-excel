@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Importador.Excel.Tests", "I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Importador.Excel.Epplus", "Importador.Excel.Epplus\Importador.Excel.Epplus.csproj", "{AEB9ABAA-8E69-4820-B232-F5FD91C2E1A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Importador.Excel.Abstracciones", "Importador.Excel.Abstracciones\Importador.Excel.Abstracciones.csproj", "{C74F075E-9AAD-44ED-A009-9708727EFDA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Importador.Excel.Abstracciones", "Importador.Excel.Abstracciones\Importador.Excel.Abstracciones.csproj", "{C74F075E-9AAD-44ED-A009-9708727EFDA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Importador.Excel.Abstracciones.Modelos;
 
 namespace Importador.Excel.Abstracciones
 {
@@ -14,34 +16,57 @@ namespace Importador.Excel.Abstracciones
             _importadorExcel = importadorExcel;
         }
 
-        public List<T> Mapear(MemoryStream stream)
+        public List<ImportacionDetalles<T>> Mapear(MemoryStream stream)
         {
-            var datos = new List<T>();
+            var importacionDetalles = new List<ImportacionDetalles<T>>();
 
             using (IImplementacionImportadorExcel importador = _importadorExcel.IniciarImportador(stream))
             {
-                List<MapeoColumnaPropiedad> mapeadores = importador.ObtenerMapeoColumnasPropiedades();
+                List<PropiedadColumna> propiedadesEncabezado = importador.ObtenerPropiedadesEncabezado();
 
-                int cantidadFilas = importador.ObtenerNumeroFilas();
+                int cantidadFilas = importador.ObtenerCantidadFilas();
 
-                for (var fila = 2; fila < cantidadFilas; fila++)
+                for (int fila = 2; fila <= cantidadFilas; fila++)
                 {
-                    PropertyInfo[] propiedadesDto = typeof(T).GetProperties();
-                    var dtoPrueba = new T();
-                    foreach (PropertyInfo propertyInfo in propiedadesDto)
-                    {
-                        MapeoColumnaPropiedad mapaPropiedad =
-                            mapeadores.FirstOrDefault(mapa => mapa.Propiedad == propertyInfo.Name);
-                        if (mapaPropiedad is null)
-                            continue;
-                        object valorCelda = importador.ObtenerValorCelda(propertyInfo.PropertyType, fila, mapaPropiedad.Columna);
-                        propertyInfo.SetValue(dtoPrueba, valorCelda);
-                    }
-
-                    datos.Add(dtoPrueba);
+                    if (importador.FilaEstaVacia(fila))
+                        continue;
+                    var detalle = GenerarDetalle(fila, propiedadesEncabezado, importador);
+                    importacionDetalles.Add(detalle);
                 }
-                return datos;
+
+                return importacionDetalles;
             }
+        }
+
+        private ImportacionDetalles<T> GenerarDetalle(int fila, List<PropiedadColumna> columnasEncabezado, IImplementacionImportadorExcel importador)
+        {
+            var detalle = new ImportacionDetalles<T> { Fila = fila };
+            var entidad = new T();
+
+            foreach (PropertyInfo informacionPropiedad in typeof(T).GetProperties())
+            {
+                PropiedadColumna columnaEncontrada =
+                    columnasEncabezado.FirstOrDefault(columna => columna.NombrePropiedad == informacionPropiedad.Name);
+
+                if (columnaEncontrada is null)
+                    continue;
+
+                try
+                {
+                    object valorCelda = importador.ObtenerValorCelda(informacionPropiedad.PropertyType, fila, columnaEncontrada.NumeroColumna);
+                    informacionPropiedad.SetValue(entidad, valorCelda);
+                }
+                catch
+                {
+                    var rango = importador.ObtenerRango(fila, columnaEncontrada.NumeroColumna);
+                    detalle.Erores.Add(new Error(columnaEncontrada.NumeroColumna, $"El valor ingresado en la celda '{columnaEncontrada.NombrePropiedad}'({rango}) no es válido."));
+                }
+            }
+
+            if (detalle.Erores.Count == 0)
+                detalle.Entidad = entidad;
+
+            return detalle;
         }
     }
 }

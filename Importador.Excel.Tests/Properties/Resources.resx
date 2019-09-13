@@ -127,7 +127,22 @@
   <data name="PruebaFechaInCorrecta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PruebaFechaInCorrecta.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="PruebaFormatos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PruebaFormatos.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PruebaImportarColumnaTexto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PruebaImportarColumnaTexto.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="PruebaNumeroComoTexto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PruebaNumeroComoTexto.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PruebaNumeroConDecimales" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PruebaNumeroConDecimales.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PruebaNumeroConDecimalesComa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PruebaNumeroConDecimalesComa.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PruebaNumeroConNotacionCientifica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PruebaNumeroConNotacionCientifica.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
